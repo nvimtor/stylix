@@ -108,7 +108,7 @@
       darwinModules.stylix = { pkgs, ... }@args: {
         imports = [
           (import ./stylix/darwin inputs {
-            inherit (self.packages.${pkgs.system}) palette-generator;
+            inherit (self.packages.${pkgs.stdenv.system}) palette-generator;
             base16 = base16.lib args;
             homeManagerModule = self.homeManagerModules.stylix;
           })
